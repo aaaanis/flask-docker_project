@@ -1,0 +1,341 @@
+{
+	"info": {
+		"_postman_id": "432fb457-7be0-4bc2-8730-aa426764cd08",
+		"name": "Projet_Open_Food_Facts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SearchProdut",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://world.openfoodfacts.org/api/v0/product/7613035833272",
+					"protocol": "https",
+					"host": [
+						"world",
+						"openfoodfacts",
+						"org"
+					],
+					"path": [
+						"api",
+						"v0",
+						"product",
+						"7613035833272"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateNewUsers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"full_name\": \"Anis Akeb\",\n    \"email\": \"test.test@test\",\n    \"password\": \"test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/auth/signup",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"signup"
+					],
+					"query": [
+						{
+							"key": "'price'",
+							"value": "200",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"test.test@test\",\n    \"password\": \"test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AuthMe",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MDM2MDA1MCwianRpIjoiNmRmMzE0MTQtNDMzOS00OWI2LTg2NzgtODFjZWE3YmNhNWFmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE2NTAzNjAwNTAsImV4cCI6MTY1MDk2NDg1MH0.dYyok65iGgApq0MEZn_63A66Pn7K8BxDZ0F5PAXR3WU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:3000/auth/me",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"me"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProductByBarCode",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MDM2MDA1MCwianRpIjoiNmRmMzE0MTQtNDMzOS00OWI2LTg2NzgtODFjZWE3YmNhNWFmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE2NTAzNjAwNTAsImV4cCI6MTY1MDk2NDg1MH0.dYyok65iGgApq0MEZn_63A66Pn7K8BxDZ0F5PAXR3WU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:3000/products/3760020507350",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"3760020507350"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProductsList",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MDM2MDA1MCwianRpIjoiNmRmMzE0MTQtNDMzOS00OWI2LTg2NzgtODFjZWE3YmNhNWFmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE2NTAzNjAwNTAsImV4cCI6MTY1MDk2NDg1MH0.dYyok65iGgApq0MEZn_63A66Pn7K8BxDZ0F5PAXR3WU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:3000/products",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostNewProduct",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MDM2MDA1MCwianRpIjoiNmRmMzE0MTQtNDMzOS00OWI2LTg2NzgtODFjZWE3YmNhNWFmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE2NTAzNjAwNTAsImV4cCI6MTY1MDk2NDg1MH0.dYyok65iGgApq0MEZn_63A66Pn7K8BxDZ0F5PAXR3WU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:3000/products/3017620425035",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"3017620425035"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteProductByBarCode",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY0OTI0NzIzMywianRpIjoiZjFjYjc1NGEtM2E2MS00YmM2LWI0NmUtMGQyOGU5YzE1MzAzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE2NDkyNDcyMzMsImV4cCI6MTY0OTg1MjAzM30.3vkhCheTBIADu0cDvzXD85UjirTrN3m9_5QVLozGAGI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:3000/products/5449000000996",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"5449000000996"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuyProductByBarCode",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MDM2MDA1MCwianRpIjoiNmRmMzE0MTQtNDMzOS00OWI2LTg2NzgtODFjZWE3YmNhNWFmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE2NTAzNjAwNTAsImV4cCI6MTY1MDk2NDg1MH0.dYyok65iGgApq0MEZn_63A66Pn7K8BxDZ0F5PAXR3WU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"price\" : 200\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/products/buy/3046920022606",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"buy",
+						"3046920022606"
+					],
+					"query": [
+						{
+							"key": "'price'",
+							"value": "200",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetListOfBoughtitems",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MDM2MDA1MCwianRpIjoiNmRmMzE0MTQtNDMzOS00OWI2LTg2NzgtODFjZWE3YmNhNWFmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE2NTAzNjAwNTAsImV4cCI6MTY1MDk2NDg1MH0.dYyok65iGgApq0MEZn_63A66Pn7K8BxDZ0F5PAXR3WU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"price\" : 200\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/products/buy",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"products",
+						"buy"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

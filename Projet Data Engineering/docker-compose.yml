@@ -1,0 +1,31 @@
+services:
+  api:
+    depends_on:
+      - database
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: "postgresql://postgres:password@database:3000/postgres_db"
+
+  database:
+    container_name: postgres_db
+    image: postgres
+    ports:
+      - "3300:3000"
+    environment:
+      POSTGRES_PASSWORD: "password"
+      POSTGRES_DB: "postgres_db"
+      PG_DATA: "/data/db"
+    volumes:
+       - ./data:/data/db
+
+  pgadmin:
+    container_name: pgadmin4_container
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: openfoodfact@project.com
+      PGADMIN_DEFAULT_PASSWORD: password
+    ports:
+      - "5050:80"
